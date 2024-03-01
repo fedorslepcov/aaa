@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.box{
+			width: 185px;
+			height: 145px;
+			position: absolute;
+			transition: 1.5s;
+			color: white;
+		}
+		.box1{
+			left: 325px;
+			top: 170px;
+			background: url(1.webp);
+			background-size: 100% 100%
+		}
+		.box2{
+			left: 650px;
+			top: 170px;
+			background: url(2.webp);
+			background-size: 100% 100%
+		}
+		.box3{
+			left: 975px;
+			top: 170px;
+			background: url(3.webp);
+			background-size: 100% 100%
+		}
+		.box4{
+			left: 325px;
+			top: 400px;
+			background: url(4.webp);
+			background-size: 100% 100%
+		}
+		.box5{
+			left: 650px;
+			top: 400px;
+			background: url(5.webp);
+			background-size: 100% 100%
+		}
+		.box6{
+			left: 975px;
+			top: 400px;
+			background: url(6.webp);
+			background-size: 100% 100%
+		}
+		.btn{
+			margin-left: 100px;
+		}
+		.text{
+			font-size: 20px;
+			margin-left: 65px;
+		}
+
+		.lose{
+			width: 800px;
+			height: 500px;
+			position: absolute;
+			left: 350px;
+			top: 150px;
+			display: none;
+		}
+		.text2{
+			font-size: 60px;
+			margin-left: 300px;
+			margin-top: 180px;
+		}
+		.text3{
+			font-size: 20px;
+			margin-left: 60px;
+		}
+		.win{
+			width: 800px;
+			height: 500px;
+			position: absolute;
+			left: 350px;
+			top: 150px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div style="width: 300px; height: 100px; background: white; margin-left: auto; margin-right: auto; margin-top: 30px;">
+		<h1 class="text">У тебя <span class="hp"></span> попытки</h1>
+		<h2 class="text3">Найди Nissan gtr 32</h2>
+		<button class="btn">Перемешать</button>
+	</div>
+	<div class="box box1">
+		
+	</div>
+	<div class="box box2">
+		
+	</div>
+	<div class="box box3">
+		
+	</div>
+	<div class="box box4">
+		
+	</div>
+	<div class="box box5">
+		
+	</div>
+	<div class="box box6">
+		
+	</div>
+
+	<div class="lose">
+		<p class="text2">Looser!</p>
+	</div>
+
+		<div class="win">
+		<p class="text2">Winner!</p>
+	</div>
+
+	<script type="text/javascript">
+		let x1 = 325
+		let x2 = 650
+		let x3 = 975
+		let y1 = 170
+		let y2 = 400
+		let hp = 3
+		document.querySelector('.hp').innerHTML = hp
+		document.querySelector('.btn').onclick = function(){
+			document.querySelector('.box1').style.background = 'black'
+			document.querySelector('.box2').style.background = 'black'
+			document.querySelector('.box3').style.background = 'black'
+			document.querySelector('.box4').style.background = 'black'
+			document.querySelector('.box5').style.background = 'black'
+			document.querySelector('.box6').style.background = 'black'
+
+			document.querySelector('.box1').style.left = x3 + 'px'
+			document.querySelector('.box2').style.left = x1 + 'px'
+			document.querySelector('.box3').style.left = x2 + 'px'
+			document.querySelector('.box4').style.left = x2 + 'px'
+			document.querySelector('.box5').style.left = x3 + 'px'
+			document.querySelector('.box6').style.left = x1 + 'px'
+
+
+			document.querySelector('.box2').style.top = y2 + 'px'
+			document.querySelector('.box6').style.top = y1 + 'px'
+			document.querySelector('.box5').style.top = y1 + 'px'
+			document.querySelector('.box1').style.top = y2 + 'px'
+
+		}
+		document.querySelector('.box1').onclick = function(){
+			document.querySelector('.box1').style.background = 'url(1.webp)'
+			document.querySelector('.box1').style.backgroundSize = '100% 100%'
+			alert('Верный ответ!')
+			document.querySelector('.win').style.display = 'block'
+		}
+		document.querySelector('.box2').onclick = function(){
+			document.querySelector('.box2').style.background = 'url(2.webp)'
+			document.querySelector('.box2').style.backgroundSize = '100% 100%'
+			alert('Не верный выбор!')
+			hp = hp - 1
+			if (hp == 0){
+				alert('Больше попыток не осталось.')
+				document.querySelector('.lose').style.display = 'block'
+			}
+			document.querySelector('.hp').innerHTML = hp
+		}
+		document.querySelector('.box3').onclick = function(){
+			document.querySelector('.box3').style.background = 'url(3.webp)'
+			document.querySelector('.box3').style.backgroundSize = '100% 100%'
+			alert('Не верный выбор!')
+			hp = hp - 1
+			if (hp == 0){
+				alert('Больше попыток не осталось.')
+				document.querySelector('.lose').style.display = 'block'
+			}
+			document.querySelector('.hp').innerHTML = hp
+		}
+		document.querySelector('.box4').onclick = function(){
+			document.querySelector('.box4').style.background = 'url(4.webp)'
+			document.querySelector('.box4').style.backgroundSize = '100% 100%'
+			alert('Не верный выбор!')
+			hp = hp - 1
+			if (hp == 0){
+				alert('Больше попыток не осталось.')
+				document.querySelector('.lose').style.display = 'block'
+			}
+			document.querySelector('.hp').innerHTML = hp
+		}
+		document.querySelector('.box5').onclick = function(){
+			document.querySelector('.box5').style.background = 'url(5.webp)'
+			document.querySelector('.box5').style.backgroundSize = '100% 100%'
+			alert('Не верный выбор!')
+			hp = hp - 1
+			if (hp == 0){
+				alert('Больше попыток не осталось.')
+				document.querySelector('.lose').style.display = 'block'
+			}
+			document.querySelector('.hp').innerHTML = hp
+		}
+		document.querySelector('.box6').onclick = function(){
+			document.querySelector('.box6').style.background = 'url(6.webp)'
+			document.querySelector('.box6').style.backgroundSize = '100% 100%'
+			alert('Не верный выбор!')
+			hp = hp - 1
+			if (hp == 0){
+				alert('Больше попыток не осталось.')
+				document.querySelector('.lose').style.display = 'block'
+			}
+			document.querySelector('.hp').innerHTML = hp
+		}
+	</script>
+</body>
+</html>
